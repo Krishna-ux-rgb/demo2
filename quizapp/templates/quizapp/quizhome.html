@@ -1,0 +1,59 @@
+<html>
+    <head>
+    <title>
+            QuizApp!
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+<body style="background-color: teal
+;">
+    <div class="container">
+        <h2 class="text-center text-success">
+            Welcome To Python Quiz!
+        </h2>
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                {% for question in Questions %}
+                    {{ question.ques_id }} . <h3 style="text-align:left"> {{ question }} </h3>
+                    <h5 style="text-align:left"> {{ question.desc }} </h5>
+                    <form method="POST"  action="">
+                    <ul>
+                        
+                            <li style="text-align:left">
+                            <input type="radio" name="{{ question.ques_id }}" value = '1'>
+                            <label>{{ question.option_1 }}</label>
+                            
+
+                        </li>
+                        <li style="text-align:left">
+                            <input type="radio" name="{{ question.ques_id }}" value = '2'>
+                            <label>{{ question.option_2 }}</label>
+
+                        </li>
+                        <li style="text-align:left">
+                            <input type="radio" name="{{ question.ques_id }}" value = '3'>
+                            <label>{{ question.option_3 }}</label>
+
+                        </li>
+                        <li style="text-align:left">
+                            <input type="radio" name="{{ question.ques_id }}" value = '4'>
+                            <label>{{ question.option_4 }}</label>
+
+                        </li>
+                    </ul>
+
+                </form>
+                {% endfor %}
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
